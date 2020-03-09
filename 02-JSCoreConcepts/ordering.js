@@ -6,15 +6,11 @@ const reverse = function(arr) {
 }
 
 const sort = function(arr) {
-    arrSorted = [];
-    // ...
-    return arrSorted;
+    return arr.sort();
 }
 
 const even = function(arr) {
-    let arrEven = [];
-    // ...
-    return arrEven;
+    return arr.filter(e => e%2 === 0)
 }
 
 numbers = [8,3,2,1,5,4,6];

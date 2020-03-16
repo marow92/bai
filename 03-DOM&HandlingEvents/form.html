@@ -4,22 +4,26 @@
 <head>
 	<title>Fill in a form</title>
 	<meta charset="UTF-8">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
 	<h1>Filling in a form</h1>
 	<form>
-		<p>University:<br><input type="text"></p>
-		<p>Address:<br><input type="text"></p>
-		<button type="button">Hint</button>
+		<p>University:<br><input type="text" id="university"></p>
+		<p>Address:<br><input type="text" id="address"></p>
+		<button type="button" id="hintButton">Hint</button>
 	</form>
 
 	<script>
-		// a JavaScript code here ...
 		var university = "Cracow University of Economics";
 		var address = "Rakowicka 27, Krakow, POLAND";
-
+		$(document.body).ready(() => {
+            $("#hintButton").click(() => {
+            	document.getElementById('university').value = university
+				document.getElementById('address').value = address
+            })
+        })
 	</script>
 </body>
-
 </html>

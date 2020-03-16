@@ -4,12 +4,13 @@
 <head>
     <title>Shopping List</title>
     <meta charset="UTF-8">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
     <h1>Shopping List</h1>
     <p>
-        New item: <input type="text" name="item">
+        New item: <input type="text" id="item">
         <button type="button">Add</button>
     </p>
     <h3>List of items</h3>
@@ -20,8 +21,17 @@
     </ol>
 
     <script>
-    	// a JavaScript code here ...
-
+        $(document.body).ready(() => {
+            $("button").click(() => {
+                const itemName = $('#item').val()
+                if (itemName) {
+                    const newItem = document.createElement("li");
+                    newItem.innerText = itemName
+                    const itemList = document.getElementsByTagName('ol')[0]
+                    itemList.appendChild(newItem)
+                }
+            })
+        })
     </script>
 </body>
 
